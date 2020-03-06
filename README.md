@@ -1,0 +1,1 @@
+Simple django app preapre to automation tests.
