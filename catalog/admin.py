@@ -1,8 +1,6 @@
 from django.contrib import admin
 from .models import Author, Genre, Book, BookInstance
 
-admin.site.register(Genre)
-
 
 class BooksInline(admin.TabularInline):
     model = Book
@@ -21,7 +19,6 @@ class BooksInstanceInline(admin.TabularInline):
 
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author')
     inlines = [BooksInstanceInline]
 
 
@@ -30,6 +27,7 @@ admin.site.register(Book, BookAdmin)
 
 @admin.register(BookInstance)
 class BookInstanceAdmin(admin.ModelAdmin):
+
     list_display = ('book', 'status', 'due_back', 'id')
     list_filter = ('status', 'due_back')
 
