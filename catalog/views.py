@@ -4,7 +4,6 @@ from django.views import generic
 
 
 def index(request):
-    """View function for home page of site."""
 
     # Generate counts of some of the main objects
     num_books = Book.objects.all().count()
